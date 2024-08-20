@@ -26,13 +26,13 @@
     <!-- Border around the marker for better scan visibility -->
     <div id="marker-border"></div>
 
-    <a-scene embedded arjs>
+    <a-scene embedded arjs="sourceType: webcam; sourceWidth: 640; sourceHeight: 480; displayWidth: 640; displayHeight: 480;">
         <!-- Adjust the camera settings to prevent zoom issues -->
-        <a-entity camera="fov: 80; zoom: 0.8;"></a-entity> 
+        <a-entity camera="fov: 80; zoom: 1;"></a-entity> 
         
-        <!-- Define the marker -->
-        <a-marker type="pattern" url="image.patt">
-            <!-- Add a plane with your image -->
+        <!-- Use the Hiro marker instead of a custom pattern -->
+        <a-marker preset="hiro">
+            <!-- Add a plane with your image or any other AR content -->
             <a-plane src="assets/image.jpg" position="0 0.5 0" rotation="-90 0 0" width="1" height="0.75"></a-plane>
             
             <!-- Add a video if needed -->
