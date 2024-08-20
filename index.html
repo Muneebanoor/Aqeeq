@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR.js Example</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/AR-js-org/AR.js/3.3.2/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- Define the marker -->
+        <a-marker type="pattern" url="image.patt">
+            <!-- Add a plane with your image -->
+            <a-plane src="assets/image.jpg" position="0 0.5 0" rotation="-90 0 0" width="1" height="0.75"></a-plane>
+            
+            <!-- Add a video if needed -->
+            <a-video src="assets/your-video.mp4" position="0 1 0" rotation="-90 0 0" width="1" height="0.75" autoplay loop></a-video>
+        </a-marker>
+        
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
