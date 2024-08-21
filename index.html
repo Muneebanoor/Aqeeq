@@ -1,49 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR.js Video Overlay Example</title>
+    <title>ARTvive zara sasty mn</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/AR-js-org/AR.js/3.3.2/aframe/build/aframe-ar.js"></script>
-    <style>
-        /* Ensure the video covers the entire scene */
-        body { margin: 0; overflow: hidden; }
-        video { display: none; }
-    </style>
 </head>
-<body>
-
-    <!-- The video element (it will be hidden from the main view and only appear in AR) -->
-    <video id="ar-video" src="assets/video.mp4" loop muted></video>
-
-    <!-- A-Frame AR Scene -->
-    <a-scene embedded arjs>
-        <!-- Use your custom .patt marker -->
+<body style="margin: 0; overflow: hidden;">
+    <a-scene  embedded arjs>
+        <!-- Define the marker -->
+        <a-entity camera="aspect: 1.7777"></a-entity> 
         <a-marker type="pattern" url="image.patt">
-            <!-- Map the video onto a plane -->
-            <a-video src="#ar-video" position="0 0.5 0" rotation="-90 0 0" width="1" height="0.75"></a-video>
+            <!-- Add a plane with your image -->
+            <a-plane src="assets/image.jpg" position="0 0.5 0" rotation="-90 0 0" width="1" height="0.75"></a-plane>
+            
+            <!-- Add a video if needed -->
+            <a-video src="assets/video.mp4" position="0 1 0" rotation="-90 0 0" width="1" height="0.75" autoplay loop></a-video>
         </a-marker>
+        
         <a-entity camera></a-entity>
     </a-scene>
-    
-    <!-- Optional: Autoplay video when the marker is detected -->
-    <script>
-        // Get the video element
-        const video = document.querySelector("#ar-video");
-
-        // When the marker is detected, play the video
-        AFRAME.registerComponent('videohandler', {
-            init: function () {
-                this.el.addEventListener('markerFound', () => {
-                    video.play();
-                });
-                this.el.addEventListener('markerLost', () => {
-                    video.pause();
-                });
-            }
-        });
-    </script>
-
 </body>
 </html>
