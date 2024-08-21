@@ -1,32 +1,5 @@
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-<script>
-  window.onload = function() {
-    AFRAME.registerComponent("videohandler", {
-      init: function() {
-        var marker = this.el;
-
-        this.vid = document.querySelector("#vid");
-
-        marker.addEventListener(
-          "markerFound",
-          function() {
-            this.vid.play();
-          }.bind(this)
-        );
-
-        marker.addEventListener(
-          "markerLost",
-          function() {
-            this.vid.pause();
-            this.vid.currentTime = 0;
-          }.bind(this)
-        );
-      }
-    });
-  };
-</script>
 
 <style>
   .arjs-loader {
@@ -50,41 +23,39 @@
 </style>
 
 <body style="margin : 0px; overflow: hidden;">
+  <!-- minimal loader shown until image descriptors are loaded -->
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
   <a-scene
     vr-mode-ui="enabled: false;"
-    renderer="antialias: true; alpha: true; precision: mediump;"
+    renderer="logarithmicDepthBuffer: true;"
     embedded
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
-    <a-assets>
-      <video
-        src="https://raw.githack.com/AffanJavaid/ARScanner/master/assets/video.mp4"
-        preload="auto"
-        id="vid"
-        response-type="arraybuffer"
-        loop
-        crossorigin
-        webkit-playsinline
-        autoplay
-        muted
-        playsinline
-      ></video>
-    </a-assets>
+    <!-- we use cors proxy to avoid cross-origin problems -->
+
+    <!--
+      ⚠️⚠️⚠️
+      https://arjs-cors-proxy.herokuapp.com/ is now offline, Heroku has dismissed all his free plans from November 2022.
+      You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
+      ⚠️⚠️⚠️
+    -->
 
     <a-nft
-      videohandler
       type="nft"
-      url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AffanJavaid/ARScanner/master/assets/image"
+      url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
       smooth="true"
-      smoothount="10"
-      smoothtolerance="0.01"
-      smooththreshold="5"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
     >
-      <a-video src="#vid" rotation="-90 0 0" position="50 150 -100" width="300" height="175">
-      </a-video>
+      <a-entity
+        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+        scale="5 5 5"
+        position="50 150 0"
+      >
+      </a-entity>
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
