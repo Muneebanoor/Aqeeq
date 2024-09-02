@@ -79,9 +79,10 @@ header nav ul li a:hover {
     transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
 }
 
- /*.gallery .item:hover img {
-    transform: scale(1.1); /* Zoom in effect 
-} */
+/* Add a new hover effect */
+.gallery .item:hover {
+    transform: scale(1.05);
+}
 
 .gallery .item .content {
     display: flex;
@@ -157,7 +158,25 @@ footer {
     border-top: 2px solid #ff9800; /* Border on top of footer */
 }
 
-/* General reset and body styling (No changes to the current view) */
+/* Poetry Section - New Styles */
+.poetry {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    border: 2px solid #ff9800; /* Border around poetry section */
+}
+
+.poetry h2 {
+    color: #ff9800;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.poetry p {
+    font-size: 16px;
+    color: #ffffff;
+}
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
@@ -211,6 +230,16 @@ footer {
         height: auto;
         object-fit: cover;
     }
+
+    /* Adjustments for the poetry section */
+    .poetry {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .poetry h2 {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -227,5 +256,27 @@ footer {
     .gallery .item .description {
         font-size: 12px; /* Smaller font for description on very small screens */
     }
+
+    /* Further adjustments for the poetry section */
+    .poetry {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .poetry h2 {
+        font-size: 18px;
+    }
 }
 
+/* Poetry Styling */
+.gallery .item .content .poetry {
+    font-family: 'Nastaleeq', 'Times New Roman', serif; /* Fancy font for poetry */
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff9800, #333);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
