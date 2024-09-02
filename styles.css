@@ -73,7 +73,7 @@ header nav ul li a:hover {
 }
 
 .gallery .item img {
-    width: 40%; /* Reduce image width */
+    width: 50%; /* Reduce image width */
     height: auto;
     display: block;
     transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
@@ -87,7 +87,7 @@ header nav ul li a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 60%; /* Adjust content width */
+    width: 50%; /* Adjust content width */
     padding: 10px;
 }
 
@@ -95,7 +95,7 @@ header nav ul li a:hover {
     position: absolute; /* Absolute positioning to overlay on the image */
     top: 0;
     left: 0;
-    width: 40%; /* Match the width of the image */
+    width: 50%; /* Match the width of the image */
     height: 100%; /* Cover the full height of the image */
     display: flex;
     justify-content: center;
@@ -134,7 +134,7 @@ header nav ul li a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 40%; /* Match the width of the image */
+    width: 50%; /* Match the width of the image */
     height: 100%; /* Cover the full height of the image */
     object-fit: cover; /* Ensure the video covers the image area */
     opacity: 0;
@@ -156,3 +156,76 @@ footer {
     background-color: #1e1e1e;
     border-top: 2px solid #ff9800; /* Border on top of footer */
 }
+
+/* General reset and body styling (No changes to the current view) */
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .gallery .item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align all content */
+    }
+
+    .gallery .item img {
+        width: 100%; /* Full width on mobile */
+        height: auto;
+    }
+
+    .gallery .item .content {
+        width: 100%; /* Full width for content */
+        padding: 10px;
+        order: 2; /* Move content (description) below the image */
+    }
+
+    .gallery .item .overlay {
+        position: static; /* Change position for mobile */
+        width: 100%; /* Full width on mobile */
+        height: auto;
+        opacity: 1; /* Always show on mobile */
+        background-color: transparent; /* No background color */
+        text-align: center;
+        margin-top: 10px;
+        order: 1; /* Move overlay (title) above the description */
+    }
+
+    .gallery .item .overlay h3 {
+        color: #ff9800;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 20px; /* Increase the size of the title for better visibility */
+    }
+
+    .gallery .item .description {
+        background-color: #1e1e1e;
+        border-radius: 8px;
+        border: 1px solid #ff9800; /* Border around description */
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 14px; /* Slightly smaller font size for description */
+        width: 100%;
+        order: 3; /* Ensure description is the last element */
+    }
+
+    .hover-video {
+        width: 100%; /* Full width on mobile */
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .gallery .item img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .gallery .item .overlay h3 {
+        font-size: 18px; /* Adjust font size for very small screens */
+    }
+
+    .gallery .item .description {
+        font-size: 12px; /* Smaller font for description on very small screens */
+    }
+}
+

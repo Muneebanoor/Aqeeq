@@ -39,8 +39,16 @@
   <div class="gallery">
     <div class="container">
         <div class="item">
-            <img src="assets/image1.jpg" alt="Travel Photo 1">
+            <img src="assets/image1.jpg" alt="Travel Photo 2">
             <video class="hover-video" src="assets/video1.mp4"></video>
+            <div class="content">
+                
+                    <h3>Travel Destination 1</h3>
+                
+                <div class="description">
+                    <p>This is a beautiful travel destination that you should not miss. The view is amazing and the experience is unforgettable.</p>
+                </div>
+            </div>
         </div>
         <!-- Repeat for other images -->
     </div>
@@ -49,22 +57,53 @@
 <script>
     document.querySelectorAll('.item').forEach(item => {
         const video = item.querySelector('.hover-video');
-        
-        item.addEventListener('mouseenter', () => {
-            video.style.opacity = 1;
-            video.play();
-        });
+        const overlay = item.querySelector('.overlay');
 
-        item.addEventListener('mouseleave', () => {
-            video.style.opacity = 0;
-            video.pause();
-            video.currentTime = 0; // Reset video to start
-        });
+        // Detect touch devices
+        const isTouchDevice = 'ontouchstart' in document.documentElement;
+
+        if (isTouchDevice) {
+            // Toggle title and video play/pause on click
+            item.addEventListener('click', () => {
+                if (video && video.style.opacity == 1) {
+                    // Hide video and reset it
+                    video.style.opacity = 0;
+                    video.pause();
+                    video.currentTime = 0; // Reset video to start
+                } else {
+                    // Show video and play it
+                    if (video) {
+                        video.style.opacity = 1;
+                        video.play();
+                    }
+                }
+
+                // Toggle overlay visibility
+                if (overlay.style.opacity == 1) {
+                    overlay.style.opacity = 0;
+                } else {
+                    overlay.style.opacity = 1;
+                }
+            });
+        } else {
+            // Existing hover effect for non-touch devices (desktops)
+            item.addEventListener('mouseenter', () => {
+                if (video) {
+                    video.style.opacity = 1;
+                    video.play();
+                }
+            });
+
+            item.addEventListener('mouseleave', () => {
+                if (video) {
+                    video.style.opacity = 0;
+                    video.pause();
+                    video.currentTime = 0; // Reset video to start
+                }
+            });
+        }
     });
 </script>
-
-
-
 
 
     <footer>
