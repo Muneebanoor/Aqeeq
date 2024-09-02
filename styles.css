@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
@@ -267,10 +267,14 @@ footer {
         font-size: 18px;
     }
 }
-
+.logo img {
+    height: 60px; /* Adjust height as needed */
+    width: auto;  /* Maintain aspect ratio */
+    display: block;
+}
 /* Poetry Styling */
 .gallery .item .content .poetry {
-    font-family: 'Nastaleeq', 'Times New Roman', serif; /* Fancy font for poetry */
+    font-family: 'Noto Nastaliq Urdu', serif;/* Fancy font for poetry */
     font-size: 20px;
     color: #ffffff;
     margin-top: 10px;
