@@ -10,6 +10,9 @@ body {
     background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
+    padding: 20px;
+    border: 2px solid #ff9800; /* Border around the website */
+    border-radius: 10px;
 }
 
 /* Header styling */
@@ -19,6 +22,7 @@ header {
     align-items: center;
     padding: 20px;
     background-color: #1e1e1e;
+    border-bottom: 2px solid #ff9800; /* Border under header */
 }
 
 header .logo {
@@ -51,50 +55,98 @@ header nav ul li a:hover {
 }
 
 .gallery .container {
-    max-width: 1200px;
+    max-width: 800px; /* Reduce the container width */
     margin: 0 auto;
-}
-
-.gallery .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
 .gallery .item {
-    position: relative;
-    overflow: hidden;
+    display: flex;
+    background-color: #333;
     border-radius: 8px;
+    border: 2px solid #ff9800; /* Border around each item */
+    overflow: hidden;
+    position: relative; /* Important: Set position to relative to contain the overlay */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
 
 .gallery .item img {
-    width: 100%;
+    width: 40%; /* Reduce image width */
+    height: auto;
     display: block;
-    border-radius: 8px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+}
+
+ /*.gallery .item:hover img {
+    transform: scale(1.1); /* Zoom in effect 
+} */
+
+.gallery .item .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%; /* Adjust content width */
+    padding: 10px;
 }
 
 .gallery .item .overlay {
-    position: absolute;
+    position: absolute; /* Absolute positioning to overlay on the image */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    width: 40%; /* Match the width of the image */
+    height: 100%; /* Cover the full height of the image */
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0; /* Hide title initially */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.gallery .item:hover .overlay {
+    opacity: 1; /* Show title on hover */
 }
 
 .gallery .item .overlay h3 {
     color: #ff9800;
     text-transform: uppercase;
+    text-align: center;
 }
 
-.gallery .item:hover .overlay {
+.gallery .item .description {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    border: 1px solid #ff9800; /* Border around description */
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.gallery .item .description p {
+    margin: 0;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Video Styling - Plays Over Image */
+.hover-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%; /* Match the width of the image */
+    height: 100%; /* Cover the full height of the image */
+    object-fit: cover; /* Ensure the video covers the image area */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevent the video from blocking hover events */
+}
+
+.gallery .item:hover .hover-video {
     opacity: 1;
+    pointer-events: auto; /* Allow interaction with the video */
+    autoplay: true;
+    loop: true;
 }
 
 /* Footer styling */
@@ -102,4 +154,5 @@ footer {
     padding: 20px;
     text-align: center;
     background-color: #1e1e1e;
+    border-top: 2px solid #ff9800; /* Border on top of footer */
 }

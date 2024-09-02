@@ -19,20 +19,53 @@
         </nav>
     </header>
 
-    <section class="gallery">
-        <div class="container">
-            <div class="grid">
-                <!-- Repeat this block for each of the 12 images -->
-                <div class="item">
-                    <img src="assets/image.jpg" alt="Travel Photo">
-                    <div class="overlay">
-                        <h3>Travel Destination</h3>
-                    </div>
-                </div>
-                <!-- Repeat block ends -->
-            </div>
+    <div class="gallery">
+      <div class="container">
+          <div class="item">
+              <img src="assets/image.jpg" alt="Travel Photo 1">
+              <div class="content">
+                  <div class="overlay">
+                      <h3>Travel Destination 1</h3>
+                  </div>
+                  <div class="description">
+                      <p>This is a beautiful travel destination that you should not miss. The view is amazing and the experience is unforgettable.</p>
+                  </div>
+              </div>
+          </div>
+          <!-- Repeat for other images -->
+      </div>
+  </div>
+  
+  <div class="gallery">
+    <div class="container">
+        <div class="item">
+            <img src="assets/image1.jpg" alt="Travel Photo 1">
+            <video class="hover-video" src="assets/video1.mp4"></video>
         </div>
-    </section>
+        <!-- Repeat for other images -->
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.item').forEach(item => {
+        const video = item.querySelector('.hover-video');
+        
+        item.addEventListener('mouseenter', () => {
+            video.style.opacity = 1;
+            video.play();
+        });
+
+        item.addEventListener('mouseleave', () => {
+            video.style.opacity = 0;
+            video.pause();
+            video.currentTime = 0; // Reset video to start
+        });
+    });
+</script>
+
+
+
+
 
     <footer>
         <p>&copy; 2024 Travel Gallery. All rights reserved.</p>
