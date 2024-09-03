@@ -54,17 +54,17 @@ body {
 }
 
 .hero p.lead {
-    color: #ff5722;
+    color: #000000;
 }
 
 .hero .btn-warning {
-    background-color: #ff5722;
+    background-color: #a6a6a6;
     border: none;
     color: #fff;
 }
 
 .hero .btn-warning:hover {
-    background-color: #e64a19;
+    background-color: #e0dbd9;
 }
 
 #about .card {
