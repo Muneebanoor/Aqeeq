@@ -1,133 +1,118 @@
-/* General reset and body styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #121212;
-    color: #000000;
-    line-height: 1.6;
-    padding: 20px;
-    border: 2px solid #bcb5beb4; /* Border around the website */
-    border-radius: 10px;
+    color: #333;
+    background-color: #f7f7f7;
 }
 
-/* Header styling */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #484146;
-    border-bottom: 2px solid #bcb5beb4; /* Border under header */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 2px solid #f7f7f7;
 }
 
-header .logo {
-    font-size: 24px;
+.navbar-brand {
     font-weight: bold;
+    color: #333;
 }
 
-header nav ul {
-    list-style-type: none;
-    display: flex;
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    margin-right: 15px;
 }
 
-header nav ul li {
-    margin-left: 20px;
+.navbar-nav .nav-link:hover {
+    color: #ff5722;
 }
-
-header nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-    color: #bcb5beb4;
-}
-
-/* Gallery styling */
-.gallery {
-    padding: 40px 20px;
-}
-
-.gallery .container {
-    max-width: 800px; /* Reduce the container width */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.gallery .item {
-    display: flex;
-    background-color: #333;
-    border-radius: 8px;
-    border: 2px solid #b1a4b3b4; /* Border around each item */
+.hero {
+    position: relative;
     overflow: hidden;
-    position: relative; /* Important: Set position to relative to contain the overlay */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
 
-.gallery .item img {
-    width: 50%; /* Reduce image width */
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/bkg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px); /* Adjust the blur intensity here */
+    z-index: 1;
 }
 
-/* Add a new hover effect */
-.gallery .item:hover {
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.hero h1 {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.hero p.lead {
+    color: #ff5722;
+}
+
+.hero .btn-warning {
+    background-color: #ff5722;
+    border: none;
+    color: #fff;
+}
+
+.hero .btn-warning:hover {
+    background-color: #e64a19;
+}
+
+#about .card {
+    background: linear-gradient(135deg, #ffffff, #c6c5c5);
+    color: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#about .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#about .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#about .card-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+#gallery .card {
+    background-color: #333;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #ff5722;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+#gallery .card:hover {
     transform: scale(1.05);
 }
 
-.gallery .item .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%; /* Adjust content width */
-    padding: 10px;
-}
-
-.gallery .item .overlay {
-    position: absolute; /* Absolute positioning to overlay on the image */
-    top: 0;
-    left: 0;
-    width: 50%; /* Match the width of the image */
-    height: 100%; /* Cover the full height of the image */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    opacity: 0; /* Hide title initially */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
-}
-
-.gallery .item:hover .overlay {
-    opacity: 1; /* Show title on hover */
-}
-
-.gallery .item .overlay h3 {
-    color: #bcb5beb4;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.gallery .item .description {
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    border: 1px solid #bcb5beb4; /* Border around description */
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.gallery .item .description p {
-    margin: 0;
-    color: #ccc;
-    font-size: 14px;
+#gallery .card img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Video Styling - Plays Over Image */
@@ -135,152 +120,110 @@ header nav ul li a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%; /* Match the width of the image */
-    height: 100%; /* Cover the full height of the image */
-    object-fit: cover; /* Ensure the video covers the image area */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease-in-out;
-    pointer-events: none; /* Prevent the video from blocking hover events */
 }
 
-.gallery .item:hover .hover-video {
+#gallery .card:hover .hover-video {
     opacity: 1;
-    pointer-events: auto; /* Allow interaction with the video */
-    autoplay: true;
-    loop: true;
+    pointer-events: auto;
 }
 
-/* Footer styling */
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #1e1e1e;
-    border-top: 2px solid #bcb5beb4; /* Border on top of footer */
-}
-
-/* Poetry Section - New Styles */
 .poetry {
-    padding: 20px;
-    margin: 20px 0;
-    background-color: #bcb5beb4;
-    border-radius: 8px;
-    border: 2px solid #bcb5beb4; /* Border around poetry section */
-}
-
-.poetry h2 {
-    color: #bcb5beb4;
+    font-family: 'Noto Nastaliq Urdu', serif; /* Ensures the Urdu font is applied */
     font-size: 24px;
+    color: #ffffff;
+    margin-top: 10px;
     margin-bottom: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #bcb5beb4, #ffffff);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center aligns the text */
 }
 
-.poetry p {
+footer {
+    background-color: #f7f7f7;
+    color: #555;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #f7f7f7;
+}
+
+footer p {
+    margin: 0;
+}
+
+#our-duty .image-overlay {
+    position: relative;
+    background-image: url('assets/bkg.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 250px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#our-duty .overlay-content {
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+#our-duty .quote {
+    margin: 0;
+}
+
+#our-duty .card {
+    margin-top: -50px; /* To overlap the card with the image slightly */
+}
+
+#our-duty .card-text {
     font-size: 16px;
-    color: #000000;
+    line-height: 1.8;
+    color: #333;
+    text-align: left;
 }
 
-/* Media Queries for Responsive Design */
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .gallery .item {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center align all content */
+    .hero {
+        padding: 50px 0;
     }
 
-    .gallery .item img {
-        width: 100%; /* Full width on mobile */
-        height: auto;
+    #about .card {
+        padding: 20px;
     }
 
-    .gallery .item .content {
-        width: 100%; /* Full width for content */
-        padding: 10px;
-        order: 2; /* Move content (description) below the image */
+    #about .card-title {
+        font-size: 1.5rem;
     }
 
-    .gallery .item .overlay {
-        position: static; /* Change position for mobile */
-        width: 100%; /* Full width on mobile */
-        height: auto;
-        opacity: 1; /* Always show on mobile */
-        background-color: transparent; /* No background color */
-        text-align: center;
-        margin-top: 10px;
-        order: 1; /* Move overlay (title) above the description */
-    }
-
-    .gallery .item .overlay h3 {
-        color: #bcb5beb4;
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 20px; /* Increase the size of the title for better visibility */
-    }
-
-    .gallery .item .description {
-        background-color: #1e1e1e;
-        border-radius: 8px;
-        border: 1px solid #bcb5beb4; /* Border around description */
-        padding: 10px;
-        margin-top: 10px;
-        font-size: 14px; /* Slightly smaller font size for description */
-        width: 100%;
-        order: 3; /* Ensure description is the last element */
-    }
-
-    .hover-video {
-        width: 100%; /* Full width on mobile */
-        height: auto;
-        object-fit: cover;
-    }
-
-    /* Adjustments for the poetry section */
-    .poetry {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .poetry h2 {
-        font-size: 20px;
+    #gallery .card {
+        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Further adjustments for very small screens */
-    .gallery .item img {
-        width: 100%;
-        height: auto; /* Maintain aspect ratio */
+    .hero h1 {
+        font-size: 1.75rem;
     }
 
-    .gallery .item .overlay h3 {
-        font-size: 18px; /* Adjust font size for very small screens */
+    .hero p.lead {
+        font-size: 1rem;
     }
 
-    .gallery .item .description {
-        font-size: 12px; /* Smaller font for description on very small screens */
-    }
-
-    /* Further adjustments for the poetry section */
     .poetry {
-        padding: 10px;
-        font-size: 12px;
+        font-size: 20px;
+        padding: 8px;
     }
-
-    .poetry h2 {
-        font-size: 18px;
-    }
-}
-.logo img {
-    height: 60px; /* Adjust height as needed */
-    width: auto;  /* Maintain aspect ratio */
-    display: block;
-}
-/* Poetry Styling */
-.gallery .item .content .poetry {
-    font-family: 'Noto Nastaliq Urdu', serif;/* Fancy font for poetry */
-    font-size: 20px;
-    color: #000000;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 15px;
-    background: linear-gradient(135deg, #bcb5beb4, #bcb5beb4);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }

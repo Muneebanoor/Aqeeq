@@ -1,246 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOICE OF LABOUR</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-        <img src="assets/logo.png" alt="VOL Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contacts</a></li>
-            </ul>
-        </nav>
-    </header>
-  
-    <div class="gallery">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
-            <div class="item">
-                <img src="assets/image1.jpg" alt="Travel Photo 2">
-                <video class="hover-video" src="assets/video1.mp4"></video>
-                <div class="content">
-                    <div class="poetry">
-                    <h3>نفسِ مطمئنہ</h3>
-                    </div>
-                    <div class="poetry">
-                        <h5>میری نیندیں حرام کیا ہوں گی</h5>
-                        <h5>میرے گھر رزق حلال آتا ہے</h5>
-                    </div>
-                    <div class="description">
-                        <p>This image captures the essence of hard work—an old man, content in his craft, earning his living with dignity. His satisfaction isn't in wealth or luxury, but in the peace that comes from knowing his earnings are halal, pure, and blessed.
+            <a class="logo" href="#">
+                <img src="assets/logo.png" alt="Logo" height="60"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Labour</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#our-duty">Our Duty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#comments">Comments</a>
+                    </li>
 
-                            Such is the honor of those who toil with their hands, for their reward lies not just in the material world but in the tranquility of a satisfied soul—نفسِ مطمئنہ</p>
-                    </div>
-                </div>
+                </ul>
             </div>
         </div>
-    </div>
+    </nav>
+
     
-    <div class="gallery">
+    <!-- Hero Section -->
+    <section class="hero bg-light text-dark text-center py-5">
+        <div class="hero-background"></div>
+        <div class="container position-relative">
+            <p class="lead text-uppercase" >Be the voice of laborers</p>
+            <h1 class="display-4 fw-bold">They make our lives easier by making theirs difficult</h1>
+            <p class="lead" >Your small contribution means a lot.</p>
+            <a href="#gallery" class="btn btn-warning btn-lg">View Gallery</a>
+        </div>
+    </section>
+
+
+
+    <!-- About Labour Section -->
+    <section id="about" class="py-5 text-center">
         <div class="container">
-            <div class="item">
-                <img src="assets/image4.jpg" alt="Travel Photo 2">
-                <video class="hover-video" src="assets/video6.mp4"></video>
-                <div class="content">
-                    <div class="poetry">
-                    <h3>کوہ کندنی</h3>
-                    </div>
-                    <div class="poetry">
-                        <h5>ابھی تلک تو نہ کندن ہوئے نہ راکھ ہوئے</h5>
-                        <h5>ہم اپنی آگ میں ہر روز جل کے دیکھتے ہیں</h5>
-                    </div>
-                    <div class="description">
-                        <p> "This laborer, who melts iron and molds it into shape,
-                            could never change his own fate.
-                            But the strength of his resolve,
-                            is stronger than the iron itself.
-                            He is the one who could bend destiny with his hard work,
-                            yet all he holds is the skill of working with iron.
-                            The iron melts,
-                            but his dignity and hard work never will."</p>
-                    </div>
+            <div class="card bg-warning text-dark border-0 shadow-lg p-3 mb-5" style="transition: transform 0.3s ease-in-out;">
+                <div class="card-body">
+                    <h2 class="card-title">About Labour</h2>
+                    <p class="card-text">
+                        Labourers are the silent architects of our world, enduring countless hardships to create the structures we inhabit, the food we eat, and the roads we travel. Their hands bear the weight of our comfort, their sweat the price of our convenience. Yet, too often, their stories remain untold, their sacrifices unrecognized.
+                    </p>
+                    <p class="card-text">
+                        This platform stands as a tribute to these unsung heroes—men and women who rise with the dawn and toil until the dusk, driven not by glory but by the unspoken bond of duty and survival. We owe them not just our respect, but our unwavering commitment to ensure they are honored, their voices heard, and their dignity preserved.
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="gallery">
-        <div class="container">
-            <div class="item">
-                <img src="assets/image5.jpg" alt="Travel Photo 2">
-                <video class="hover-video" src="assets/video4.mp4"></video>
-                <div class="content">
-                    <div class="poetry">
-                    <h3>لوک سیوا</h3>
-                    </div>
-                    <div class="poetry">
-                        <h5>چائے کا ڈھابا فقط روزگار کا حصول نہیں</h5>
-                        <h5>بلکہ محنت کے ذائقہ کا جواب ہے</h5>
-                    </div>
-                    <div class="description">
-                        <p>"This laborer, who melts iron and molds it into shape,
-                            could never change his own fate.
-                            But the strength of his resolve,
-                            is stronger than the iron itself.
-                            He is the one who could bend destiny with his hard work,
-                            yet all he holds is the skill of working with iron.
-                            The iron melts,
-                            but his dignity and hard work never will."</p>
+    <!-- Gallery Section -->
+    <section id="gallery" class="container mt-5">
+        <div class="row">
+            <!-- Gallery Item -->
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark text-light border-warning position-relative">
+                    <img src="assets/image1.jpg" class="card-img-top" alt="Image 1">
+                    <video class="hover-video position-absolute w-100 h-100" src="assets/video1.mp4" loop></video>
+                    <div class="card-body">
+                        <div class="poetry">
+                            <h5>نفسِ مطمئنہ</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <!-- Repeat for other gallery items -->
 
-
-    <div class="gallery">
-        <div class="container">
-            <div class="item">
-                <img src="assets/image7.jpg" alt="Travel Photo 2">
-                <video class="hover-video" src="assets/video2.mp4"></video>
-                <div class="content">
-                    <div class="poetry">
-                    <h3>جہدِ ملاح</h3>
-                    </div>
-                    <div class="poetry">
-                        <h5>کشتیاں سب کی کنارے پہ پہنچ جاتی ہیں</h5>
-                        <h5>ناخدا جن کا نہیں ان کا خدا ہوتا ہے</h5>
-                    </div>
-                    <div class="description">
-                        <p>"This laborer, who melts iron and molds it into shape,
-                            could never change his own fate.
-                            But the strength of his resolve,
-                            is stronger than the iron itself.
-                            He is the one who could bend destiny with his hard work,
-                            yet all he holds is the skill of working with iron.
-                            The iron melts,
-                            but his dignity and hard work never will."</p>
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark text-light border-warning position-relative">
+                    <img src="assets/image2.jpg" class="card-img-top" alt="Image 2">
+                    <video class="hover-video position-absolute w-100 h-100" src="assets/video2.mp4" loop></video>
+                    <div class="card-body">
+                        <div class="poetry">
+                            <h5>نفسِ مطمئنہ</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <!-- Repeat for other gallery items -->
 
-    <div class="gallery">
-        <div class="container">
-            <div class="item">
-                <img src="assets/image8.jpg" alt="Travel Photo 2">
-                <video class="hover-video" src="assets/video8.mp4"></video>
-                <div class="content">
-                    <div class="poetry">
-                    <h3>نجار دیار</h3>
-                    </div>
-                    <div class="poetry">
-                        <h5>ہے جب تک جان ہاتھ کسی کے آگے نہیں پھیلائے گیں</h5>
-                        <h5>ہم لکڑیاں تراش کے ہی زندگی کا پہیہ چلائے گیں</h5>
-                    </div>
-                    <div class="description">
-                        <p>"This laborer, who melts iron and molds it into shape,
-                            could never change his own fate.
-                            But the strength of his resolve,
-                            is stronger than the iron itself.
-                            He is the one who could bend destiny with his hard work,
-                            yet all he holds is the skill of working with iron.
-                            The iron melts,
-                            but his dignity and hard work never will."</p>
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark text-light border-warning position-relative">
+                    <img src="assets/image3.jpg" class="card-img-top" alt="Image 3">
+                    <video class="hover-video position-absolute w-100 h-100" src="assets/video3.mp4" loop></video>
+                    <div class="card-body">
+                        <div class="poetry">
+                            <h5>نفسِ مطمئنہ</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            <!-- Repeat for other gallery items -->
 
-    <div class="gallery">
-        <div class="container">
-            <div class="item">
-                <img src="assets/image6.jpg" alt="Travel Photo 2">
-                <video class="hover-video" src="assets/video5.mp4"></video>
-                <div class="content">
-                    <div class="poetry">
-                    <h3>مسافر رزق</h3>
-                    </div>
-                    <div class="poetry">
-                        <h5>چلتا رہوں چُپ چاپ تو گاہک نہیں آتے</h5>
-                        <h5>  آواز لگاتا ہوں تو قیمت نہیں رہتی</h5>
-                    </div>
-                    <div class="description">
-                        <p>"This laborer, who melts iron and molds it into shape,
-                            could never change his own fate.
-                            But the strength of his resolve,
-                            is stronger than the iron itself.
-                            He is the one who could bend destiny with his hard work,
-                            yet all he holds is the skill of working with iron.
-                            The iron melts,
-                            but his dignity and hard work never will."</p>
+
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark text-light border-warning position-relative">
+                    <img src="assets/image4.jpg" class="card-img-top" alt="Image 4">
+                    <video class="hover-video position-absolute w-100 h-100" src="assets/video4.mp4" loop></video>
+                    <div class="card-body">
+                        <div class="poetry">
+                            <h5>نفسِ مطمئنہ</h5>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Repeat for other gallery items -->
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark text-light border-warning position-relative">
+                    <img src="assets/image5.jpg" class="card-img-top" alt="Image 15>
+                    <video class="hover-video position-absolute w-100 h-100" src="assets/video5.mp4" loop></video>
+                    <div class="card-body">
+                        <div class="poetry">
+                            <h5>نفسِ مطمئنہ</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for other gallery items -->
+
+            <div class="col-md-4 mb-4">
+                <div class="card bg-dark text-light border-warning position-relative">
+                    <img src="assets/image6.jpg" class="card-img-top" alt="Image 6">
+                    <video class="hover-video position-absolute w-100 h-100" src="assets/video6.mp4" loop></video>
+                    <div class="card-body">
+                        <div class="poetry">
+                            <h5>نفسِ مطمئنہ</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for other gallery items -->
+
+        </div>
+    </section>
+
+<!-- Our Duty Section -->
+<!-- Our Duty Section -->
+<section id="our-duty" class="py-5 text-center">
+    <div class="container">
+        <div class="image-overlay">
+            <div class="overlay-content">
+                <p class="quote"><strong>Prophet Muhammad (ﷺ) said, "Give the worker his wages before his sweat dries."</strong></p>
+            </div>
+        </div>
+        <div class="card bg-light text-dark border-0 shadow-lg p-4 mt-3">
+            <div class="card-body">
+                <p class="card-text">
+                    As members of a society built on the hard work of laborers, it is our sacred duty to ensure that they are treated with the utmost respect and dignity. We must honor their contribution by paying them fairly and on time, acknowledging the vital role they play in our daily lives.
+                </p>
+                <p class="card-text">
+                    This platform stands as a tribute to these unsung heroes—men and women who rise with the dawn and toil until the dusk, driven not by glory but by the unspoken bond of duty and survival. We owe them not just our respect, but our unwavering commitment to ensure they are honored, their voices heard, and their dignity preserved.
+                </p>
+            </div>
         </div>
     </div>
-
-<script>
-    document.querySelectorAll('.item').forEach(item => {
-        const video = item.querySelector('.hover-video');
-        const overlay = item.querySelector('.overlay');
-
-        // Detect touch devices
-        const isTouchDevice = 'ontouchstart' in document.documentElement;
-
-        if (isTouchDevice) {
-            // Toggle title and video play/pause on click
-            item.addEventListener('click', () => {
-                if (video && video.style.opacity == 1) {
-                    // Hide video and reset it
-                    video.style.opacity = 0;
-                    video.pause();
-                    video.currentTime = 0; // Reset video to start
-                } else {
-                    // Show video and play it
-                    if (video) {
-                        video.style.opacity = 1;
-                        video.play();
-                    }
-                }
-
-                // Toggle overlay visibility
-                if (overlay.style.opacity == 1) {
-                    overlay.style.opacity = 0;
-                } else {
-                    overlay.style.opacity = 1;
-                }
-            });
-        } else {
-            // Existing hover effect for non-touch devices (desktops)
-            item.addEventListener('mouseenter', () => {
-                if (video) {
-                    video.style.opacity = 1;
-                    video.play();
-                }
-            });
-
-            item.addEventListener('mouseleave', () => {
-                if (video) {
-                    video.style.opacity = 0;
-                    video.pause();
-                    video.currentTime = 0; // Reset video to start
-                }
-            });
-        }
-    });
-</script>
+</section>
 
 
-    <footer>
+
+    <!-- Comments Section -->
+    <section id="comments" class="py-5 text-center">
+        <div class="container">
+            <h2>Comments</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Leave a Comment:</label>
+                    <textarea class="form-control" id="comment" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-warning">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-light py-3 text-center">
         <p>&copy; VOICE OF LABOUR. A Project by Muneeba Noor.</p>
     </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+    const video = card.querySelector('.hover-video');
+
+    // Detect touch devices
+    const isTouchDevice = 'ontouchstart' in document.documentElement;
+
+    if (isTouchDevice) {
+        card.addEventListener('click', () => {
+            if (video.paused) {
+                video.style.opacity = 1;
+                video.play();
+                video.muted = false; // Play sound on touch
+            } else {
+                video.style.opacity = 0;
+                video.pause();
+                video.currentTime = 0; // Reset video to start
+            }
+        });
+    } else {
+        // Play on hover for non-touch devices (desktop)
+        card.addEventListener('mouseenter', () => {
+            video.style.opacity = 1;
+            video.play();
+            video.muted = false; // Play sound on hover
+        });
+
+        card.addEventListener('mouseleave', () => {
+            video.style.opacity = 0;
+            video.pause();
+            video.currentTime = 0; // Reset video to start
+        });
+    }
+});
+
+    </script>
+    
+
 </body>
+
+
+
 </html>
