@@ -136,7 +136,7 @@ body {
 .poetry {
     font-family: 'Noto Nastaliq Urdu', serif; /* Ensures the Urdu font is applied */
     font-size: 24px;
-    color: #ffffff;
+    color: #000000;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
@@ -226,4 +226,58 @@ footer p {
         font-size: 20px;
         padding: 8px;
     }
+}
+
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.footer h5 {
+    font-weight: bold;
+}
+
+.footer p, .footer a {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer a:hover {
+    color: #ff5722;
+}
+
+.footer .social-icons a {
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.footer .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.footer .gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.footer .form-inline input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.footer .form-inline button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.text-center {
+    text-align: center;
 }
