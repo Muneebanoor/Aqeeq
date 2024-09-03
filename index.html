@@ -207,21 +207,6 @@
 </section>
 
 
-
-    <!-- Comments Section -->
-    <section id="comments" class="py-5 text-center">
-        <div class="container">
-            <h2>Comments</h2>
-            <form>
-                <div class="mb-3">
-                    <label for="comment" class="form-label">Leave a Comment:</label>
-                    <textarea class="form-control" id="comment" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-warning">Submit</button>
-            </form>
-        </div>
-    </section>
-
 <!-- Footer Section -->
 <footer class="footer bg-dark text-light py-5">
     <div class="container">
@@ -248,7 +233,7 @@
                 <ul class="list-unstyled">
                     
                     <li><a href="#about" class="text-light">About Labours</a></li>
-                    <li><a href="gallery" class="text-light">Gallery</a></li>
+                    <li><a href="#gallery" class="text-light">Gallery</a></li>
                     <li><a href="#our-duty" class="text-light">Our Duty</a></li>
                 </ul>
             </div>
@@ -289,39 +274,43 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
     <script>
-        document.querySelectorAll('.card').forEach(card => {
+document.querySelectorAll('.card').forEach(card => {
     const video = card.querySelector('.hover-video');
 
     // Detect touch devices
     const isTouchDevice = 'ontouchstart' in document.documentElement;
 
     if (isTouchDevice) {
+        let isPlaying = false;
+
         card.addEventListener('click', () => {
-            if (video.paused) {
-                video.style.opacity = 1;
-                video.play();
-                video.muted = false; // Play sound on touch
-            } else {
-                video.style.opacity = 0;
+            if (isPlaying) {
                 video.pause();
-                video.currentTime = 0; // Reset video to start
+                video.style.opacity = 0;
+                isPlaying = false;
+            } else {
+                video.play();
+                video.style.opacity = 1;
+                video.muted = false; // Play with sound
+                isPlaying = true;
             }
         });
     } else {
         // Play on hover for non-touch devices (desktop)
         card.addEventListener('mouseenter', () => {
-            video.style.opacity = 1;
             video.play();
-            video.muted = false; // Play sound on hover
+            video.style.opacity = 1;
+            video.muted = false; // Play with sound
         });
 
         card.addEventListener('mouseleave', () => {
-            video.style.opacity = 0;
             video.pause();
             video.currentTime = 0; // Reset video to start
+            video.style.opacity = 0;
         });
     }
 });
+
 
     </script>
     
