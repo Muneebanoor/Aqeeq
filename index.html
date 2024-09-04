@@ -230,8 +230,7 @@
         <div class="carousel-item">
             <img src="assets/image6.jpg" class="d-block w-100" alt="Image 2">
         </div>
-        <!-- Add more carousel items as needed -->
-    </div>
+   <!-- Carousel Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -312,7 +311,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<!-- JavaScript to disable automatic sliding -->
+    <script>
+        var photoCarousel = document.querySelector('#photoCarousel');
+        var carouselInstance = new bootstrap.Carousel(photoCarousel, {
+        interval: false,
+        ride: false
+        });
+  </script>
     <script>
 document.querySelectorAll('.card').forEach(card => {
     const video = card.querySelector('.hover-video');
