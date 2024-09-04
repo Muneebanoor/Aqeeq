@@ -146,6 +146,20 @@ body {
     text-align: center; /* Center aligns the text */
 }
 
+.Title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #0f0f0fb4, #312f2f);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center aligns the text */
+}
+
+
 footer {
     background-color: #f7f7f7;
     color: #555;
@@ -281,3 +295,34 @@ footer p {
 .text-center {
     text-align: center;
 }
+
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 600px; /* Adjust this value based on your design preference */
+    object-fit: contain; /* Ensures the entire image fits within the container */
+}
+
+/* Positioning the carousel controls closer to the image */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%; /* Adjust width to bring the arrows closer to the image */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color: #000000;/* Set the icon color to black */
+    color-scheme: #000000;
+    width: 50px; /* Adjust width of the icon */
+    height: 50px; /* Adjust height of the icon */
+}
+
+/* Ensuring the arrows are vertically centered on the image */
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
